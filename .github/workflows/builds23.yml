@@ -10,7 +10,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        target: [dm1q, dm2q, dm3q, r9q, r9q2, r11s]
+        target: [dm1q, dm2q, dm3q]
 
     steps:
       - name: Checkout repo
@@ -58,16 +58,6 @@ jobs:
         with:
           node-version: 'latest'
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.9'
-
-      - name: Install Python dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install boto3
-
       - name: Build dependencies
         run: source ./buildenv.sh ${{ matrix.target }}
 
@@ -91,17 +81,20 @@ jobs:
           source ./buildenv.sh ${{ matrix.target }}
           SOURCE_FIRMWARE="$TARGET_FIRMWARE" ./scripts/extract_fw.sh --force
 
+      - name: Cleanup out/odin and leave placeholder
+        run: |
+          rm -rf out/odin
+          mkdir -p out/odin
+          touch out/odin/.downloaded
+
       - name: Build ROM
         run: |
           source ./buildenv.sh ${{ matrix.target }}
           ./scripts/make_rom.sh --force
 
-      - name: Upload to Cloudflare R2
-        env:
-          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
-          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
-          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
-          R2_BUCKET_NAME: ${{ secrets.R2_BUCKET_NAME }}
-          FILE_PATH: $(find out -maxdepth 1 -type f -name "*.zip" | head -n 1)
-          OBJECT_KEY: ExtremeROM-${{ matrix.target }}-$(basename $(find out -maxdepth 1 -type f -name "*.zip" | head -n 1))
-        run: python .github/scripts/upload_r2.py
+      - name: Upload ROM artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ExtremeROM-${{ matrix.target }}
+          path: |
+            out/*.zip
