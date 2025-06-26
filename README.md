@@ -70,6 +70,7 @@ This project is licensed under the terms of the [GNU General Public License v3.0
 A big thanks goes to the following for their invaluable contributions in no particular order (MORE INFO AND PEOPLE: TO BE WRITTEN)
 - **[ExtremeXT](https://github.com/ExtremeXT)** for the Base of this repo, and loads of help
 - **[Nguyen Long](https://github.com/LumiPlayground)** for help with camera
+- **[Yagzie](https://github.com/Yagzie)** for the sepolicy fix
 - probatly more that i forgot
 
 
