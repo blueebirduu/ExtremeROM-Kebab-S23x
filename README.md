@@ -11,10 +11,9 @@
   
 </p>
 
-# What is ExtremeROM Nexus?
-ExtremeROM Nexus is a work-in-progress custom firmware for Samsung Galaxy devices. It's based on the latest and greatest iteration of Samsung's UX and it also includes additional features and tweaks to ensure the best possible experience out of the box.
+# What is ExtremeROM Kebab?
+ExtremeROM Kebab is a work-in-progress custom firmware for devices from the Galaxy S23 series. It's based on the latest and greatest iteration of Samsung's UX and it also includes additional features and tweaks to ensure the best possible experience out of the box.
 It is based on the UN1CA build system which allows automatic downloading/extraction of the firmware, applying the required patches and generating a flashable zip/tar package for the specified target device.
-ExtremeROM Nexus supports devices using the the Exynos 9820 and Exynos 990 SoCs
 
 Any form of contribution, suggestions, bug report or feature request for the project will be welcome.
 
@@ -25,7 +24,6 @@ Any form of contribution, suggestions, bug report or feature request for the pro
 - Partially DeKnoxed
 - Full SELinux Support
 - Full Galaxy AI support
-- Completely upstreamed kernels 4.14 and 4.19 kernels for 9820 respectively 990
 - High end animations
 - Native/live blur support
 - Adaptive color tone support
@@ -72,9 +70,6 @@ A big thanks goes to the following for their invaluable contributions in no part
 - **[Nguyen Long](https://github.com/LumiPlayground)** for help with camera
 - **[Yagzie](https://github.com/Yagzie)** for the sepolicy fix
 - probatly more that i forgot
-
-
-
 
 Original ExtremeROM credits:
 - **[salvogiangri](https://github.com/salvogiangri)** for the UN1CA build system, OneUI patches, and general help and support while developing
