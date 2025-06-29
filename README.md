@@ -71,7 +71,7 @@ A big thanks goes to the following for their invaluable contributions in no part
 - **[Yagzie](https://github.com/Yagzie)** for the sepolicy fix
 - probatly more that i forgot
 
-Original ExtremeROM credits:
+Original ExtremeROM (Nexus) credits:
 - **[salvogiangri](https://github.com/salvogiangri)** for the UN1CA build system, OneUI patches, and general help and support while developing
 - **[Ocin4Ever](https://github.com/Ocin4Ever)** for a lot of help especially on smali, advice and emotional support :D
 - **[Igor](https://github.com/BotchedRPR)** for getting me into porting, teaching me the basics, and emotional support down the road
